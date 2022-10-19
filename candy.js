@@ -1,7 +1,7 @@
 class Candy {
     constructor(name,price) {
-        this.name = name
-        this.price = price
+        this.name = name;
+        this.price = price;
     }
 
     getName() {
@@ -14,21 +14,23 @@ class Candy {
 }
 
 class ShoppingBasket {
-    constructor() {
-        this.item = item
+    constructor(item) {
+        // basket = []
+        this.items = []
     }
 
     getTotalPrice() {
         let sum = 0
-        this.item.forEach((item) => sum += item.getPrice());
+        this.items.forEach((item) => sum += item.getPrice());
+        return sum
     }
 
-    addItem() {
-        this.item.push(item);
+    addItem(item) {
+        this.items.push(item);
     }
 }
 
-const basket = [new ShoppingBasket()];
+
 
 module.exports = {
     Candy,
@@ -40,18 +42,21 @@ module.exports = {
 
 // > const candy = new Candy('Mars', 4.99);
 
+
 // > candy.getName();
 // 'Mars'
 // > candy.getPrice();
 // 4.99
 
 // > const basket = new ShoppingBasket();
+
 // > basket.getTotalPrice();
+// item.getTotalPrice();
 // 0
 
 // > basket.addItem(candy);
 
-// > basket.getTotalPrice();
+// > ç
 // 4.99
 
 // > basket.addItem(new Candy('Skittle', 3.99));
